@@ -4,7 +4,6 @@ import com.sun.istack.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.bytebuddy.utility.RandomString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,8 +1,9 @@
-package com.company.cpluss.userInfo;
+package com.company.cpluss.model.userInfo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,10 +14,14 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Role {
+@SuperBuilder
+public class Address {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    private String roleName;
+    private String district;
+    private String city;
+    private String village;
 }
