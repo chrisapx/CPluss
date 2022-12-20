@@ -31,6 +31,8 @@ public class User {
     private String username;
     @NotNull
     private String password;
+    @Column(nullable = false, unique = true)
+    private String email;
     @OneToMany(fetch = FetchType.LAZY, targetEntity = Role.class)
     @Nullable
     private List<Role> roles;
