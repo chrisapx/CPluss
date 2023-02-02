@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,38 +18,26 @@ import javax.persistence.OneToOne;
 @AllArgsConstructor
 @Data
 @Entity
-public class Order {
+public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Nullable
     private String orderID;
-    @OneToOne
+    @OneToOne(targetEntity = Product.class, cascade = CascadeType.PERSIST)
     private Product product;
     @NotNull
     private float quantity;
     @NotNull
     private double price;
-    @Nullable
-    private double totalAmount;
-    @Nullable
-    private boolean shipped;
-    @Nullable
-    private boolean packed;
-    @Nullable
-    private boolean highValue;
-    @Nullable
-    private boolean outForDelivery;
-    @Nullable
-    private boolean delivered;
-    @Nullable
-    private boolean returned;
-    @Nullable
-    private boolean orderConfirmed;
-    @Nullable
-    @OneToOne
-    private User owner;
 
+    private double totalAmount; // = price * quantity;
+
+    private String owner;
+
+    private OrderScope orderScope;
+
+    private OrderStatus orderStatus;
 
 }

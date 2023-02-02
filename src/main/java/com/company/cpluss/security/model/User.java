@@ -1,6 +1,6 @@
 package com.company.cpluss.security.model;
 
-import com.company.cpluss.inventory_service.model.Order;
+import com.company.cpluss.inventory_service.model.Orders;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -40,7 +40,7 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, targetEntity = Role.class)
     private List<Role> roles;
 
-    @OneToMany(cascade = CascadeType.ALL, targetEntity = Order.class)
-    private List<Order> orders;
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = Orders.class)
+    private List<Orders> orders;
 
 }

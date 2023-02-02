@@ -18,9 +18,9 @@ import java.util.List;
 public class Catalog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
 
     @OneToMany
-    private List<Order> cat;
+    private List<Orders> cat;
 }
